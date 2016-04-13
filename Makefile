@@ -13,7 +13,7 @@ ifeq ($(uname_S),Darwin)
 GLFW3_FLAGS := `pkg-config --cflags --libs glfw3` -framework OpenGL
 else
 # otherwise pkg-config finds OpenGL
-GLFW3_FLAGS := `pkg-config --cflags --libs glfw3 glu gl`
+GLFW3_FLAGS := `pkg-config --cflags --libs glfw3 glu gl` -lX11
 endif
 
 .PHONY: all
